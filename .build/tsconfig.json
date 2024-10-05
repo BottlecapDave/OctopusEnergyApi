@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES6",                          // Specify ECMAScript target version (ES5, ES6, ESNext, etc.)
+    "module": "CommonJS",                     // Specify module code generation (CommonJS, ES6, etc.)
+    "strict": true,                           // Enable all strict type-checking options
+    "esModuleInterop": true,                  // Enable compatibility with CommonJS and ES Modules
+    "skipLibCheck": true,                     // Skip type checking of declaration files
+    "forceConsistentCasingInFileNames": true, // Disallow inconsistently-cased file names
+    "outDir": "./dist",                       // Redirect output structure to the 'dist' directory
+    "rootDir": "./src",                       // Specify the root directory of input files
+    "resolveJsonModule": true,                // Enable importing .json files
+    "sourceMap": true,                        // Generates corresponding '.map' files
+    "moduleResolution": "node",               // Specify how TypeScript looks up a file in a module
+    "isolatedModules": true,                  // Ensure all files are compiled individually
+    "noEmit": false,                          // Disable emitting files from a compilation
+    "declaration": true,                      // Generates corresponding '.d.ts' files
+    "jsx": "react",                           // Support JSX syntax for React projects (if needed)
+    "lib": ["ES6", "DOM"]                     // Specify library files to include in the compilation
+  },
+  "include": ["src/**/*"],                    // Include all files in the 'src' directory
+  "exclude": ["node_modules", "**/*.spec.ts"] // Exclude node_modules and test files
+}
