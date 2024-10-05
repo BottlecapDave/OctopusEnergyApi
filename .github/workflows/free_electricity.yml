@@ -1,0 +1,35 @@
+name: Generate Free Electricity Data
+on:
+  schedule:
+    - cron:  '0 1 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  generate_data:
+    name: Generate Data
+    runs-on: ubuntu-latest
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: asdf_install
+        uses: asdf-vm/actions/install@v3
+      - name: Run script
+        run: |
+          npm i
+          npm run build
+          npm run generate-free-electricity-data
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: feat/free-electricity-data-update
+          title: Update free electricity data
+          reviewers: "@BottlecapDave"
+          commit-message: "feat: Update free electricity data with latest event"
