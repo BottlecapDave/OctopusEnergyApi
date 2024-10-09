@@ -64,7 +64,7 @@ async function generateFreeElectricityData() {
     });
 
     const chatCompletion = await client.chat.completions.create({
-      messages: [{ role: 'user', content: `output the datetimes in ISO format including UK timezone\n${upcomingSessionsSection}` }],
+      messages: [{ role: 'user', content: `output the datetimes in ISO format including UK timezone. If a year is not specified, then assume it's 2024.\n${upcomingSessionsSection}` }],
       model: 'gpt-4o-mini',
       response_format: {
         type: 'json_schema',
