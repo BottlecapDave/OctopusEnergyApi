@@ -28,6 +28,7 @@
   "dependencies": {
     "axios": "^1.7.7",
     "cheerio": "^1.0.0",
+    "date-fns": "^4.1.0",
     "openai": "^4.67.1",
     "simple-git": "^3.27.0"
   }
