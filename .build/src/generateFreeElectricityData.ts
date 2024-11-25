@@ -30,8 +30,6 @@ async function getFreeElectricitySessions(): Promise<Session[]> {
         const [_, datePart, startHour, endHour, ampm] = match;
         const isAm = ampm === "am";
 
-        console.log({ datePart, startHour, endHour })
-
         // Parse date with UK format and add times
         const start = parse(`${datePart} ${parseInt(startHour) + (isAm ? 0 : 12)}`, 'EEEE do MMMM HH', new Date(), { locale: enGB });
         const end = parse(`${datePart} ${parseInt(endHour) + (isAm ? 0 : 12)}`, 'EEEE do MMMM HH', new Date(), { locale: enGB });
